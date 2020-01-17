@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="176mm"
+   height="250mm"
+   viewBox="0 0 623.62205 885.82677"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="cover.svg">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient6211"
+       inkscape:collect="always">
+      <stop
+         id="stop6213"
+         offset="0"
+         style="stop-color:#000000;stop-opacity:1;" />
+      <stop
+         id="stop6215"
+         offset="1"
+         style="stop-color:#3690c0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient6021">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop6023" />
+      <stop
+         style="stop-color:#3690c0;stop-opacity:1"
+         offset="1"
+         id="stop6025" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5615"
+       osb:paint="gradient">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop5617" />
+      <stop
+         style="stop-color:#179db4;stop-opacity:1"
+         offset="1"
+         id="stop5619" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6211"
+       id="radialGradient6011"
+       cx="311.81104"
+       cy="705.78394"
+       fx="311.81104"
+       fy="705.78394"
+       r="314.41104"
+       gradientTransform="matrix(1.2206555,0.00939084,-0.01124824,1.4620906,-60.863995,-289.46318)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6021"
+       id="radialGradient6027"
+       cx="311.81104"
+       cy="705.78394"
+       fx="311.81104"
+       fy="705.78394"
+       r="314.41104"
+       gradientTransform="matrix(1.2206554,0.00939082,-0.01124825,1.4620906,-60.863967,-289.46317)"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter6207"
+       x="-0.010165909"
+       width="1.0203318"
+       y="-0.0071568001"
+       height="1.0143136">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="2.6415355"
+         id="feGaussianBlur6209" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.70593673"
+     inkscape:cx="152.02561"
+     inkscape:cy="388.7246"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     showguides="true"
+     units="mm"
+     inkscape:window-width="1920"
+     inkscape:window-height="1003"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4136" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-166.53543)">
+    <rect
+       style="opacity:1;fill:url(#radialGradient6027);fill-opacity:1;stroke:url(#radialGradient6011);stroke-width:5.19999981;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-rule:nonzero;filter:url(#filter6207)"
+       id="rect4143"
+       width="623.62207"
+       height="885.82678"
+       x="0"
+       y="167.89868" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot4677"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:-75.79000092px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       transform="translate(34.832996,237.55159)"><flowRegion
+         id="flowRegion4679"><rect
+           id="rect4681"
+           width="368.07159"
+           height="51.096996"
+           x="161.95151"
+           y="726.47345"
+           style="fill:#ffffff;" /></flowRegion><flowPara
+         id="flowPara4683"
+         style="font-size:25px;letter-spacing:0px;fill:#ffffff;">Sergio Pérez-Conesa</flowPara></flowRoot>    <flowRoot
+       transform="translate(-12.65089,167.41597)"
+       xml:space="preserve"
+       id="flowRoot4135-3-2"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:0%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';text-align:start;letter-spacing:-75.79000092px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"><flowRegion
+         id="flowRegion4137-6-9"><rect
+           id="rect4139-7-1"
+           width="531.34467"
+           height="491.87387"
+           x="58.789478"
+           y="50.526268"
+           style="fill:#ffffff;" /></flowRegion><flowPara
+         style="font-size:45px;line-height:189.99999762%;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#ffffff;"
+         id="flowPara4699-3-2"> Computational Chemistry of  Actinoids in Solution </flowPara><flowPara
+         style="font-size:45px;line-height:189.99999762%;text-align:center;letter-spacing:0px;text-anchor:middle;fill:#ffffff;"
+         id="flowPara4703-6-7"> and Confined Media</flowPara></flowRoot>    <image
+       sodipodi:absref="/home/sergio/Documents/Articles_etc/My_thesis/cover/clay.png"
+       xlink:href="clay.png"
+       width="506.84167"
+       height="398.8754"
+       preserveAspectRatio="none"
+       id="image5958"
+       x="65.70401"
+       y="510.49054" />
+  </g>
+</svg>

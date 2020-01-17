@@ -1,0 +1,589 @@
+% Sergio Pérez Conesa
+% Abril 2019
+% Sevilla
+%draft seem to stop inverse search
+\documentclass[b5paper,11pt,twoside,showtrims,openright]{memoir} %showtrims to show lines
+\usepackage[utf8]{inputenc}
+\usepackage[english,spanish,es-ucroman]{babel} %es-ucroman para el glosario
+%glosario
+\usepackage{titlesec}                          % Formato de capítulos, secciones
+\usepackage{graphicx}
+\usepackage[dvipsnames,usenames]{color}
+\usepackage{url}
+\usepackage{float}
+\usepackage{morefloats}        % Permite uso de muchos flotantes (tablas geom. y energ.)
+\usepackage{lscape}
+\usepackage{textcomp}
+\usepackage{mathtools}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[sectionbib,sort&compress,comma,super]{natbib}
+\usepackage{natmove}                          % Pone la referencia despues de comas y puntos
+\makeatletter                                 % Cita número sin ``superscript'' (^a ver ref. 7)
+\newcommand*{\citenumns}[2][]{%               
+  \begingroup
+  \let\NAT@mbox=\mbox\space
+  \let\@cite\NAT@citenum
+  \let\NAT@space\NAT@spacechar
+  \let\NAT@super@kern\relax
+  \renewcommand\NAT@open{}%
+  \renewcommand\NAT@close{}%
+  \cite[#1]{#2}%
+  \endgroup
+}
+\makeatother
+
+\usepackage[sectionbib]{chapterbib}% Para generar referencias por capítulo (incompatible con 
+%achemso)
+\usepackage{txfonts}                          % Usa un tipo de letra más oscuro
+\usepackage{footnote}
+\usepackage{tablefootnote}
+\usepackage[table]{xcolor}                    % Sombrear lineas en tablas
+\usepackage{threeparttable}
+\usepackage[notrig]{physics}
+\usepackage{tikz}
+\makeatletter
+\global\let\tikz@ensure@dollar@catcode=\relax
+\makeatother
+\usepackage{enumitem}         % Cambia (1) (2)... a (a) (b)...
+\usepackage{fourier} % OJO!!!!!!!!!   CAMBIA LA LETRAAAA
+\usepackage[version=3]{mhchem}
+\usepackage{siunitx}
+\usepackage{pdfpages}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\DeclareSIUnit\atm{atm}
+\DeclareSIUnit\cal{cal}
+\DeclareSIUnit\e{e}
+\DeclareSIUnit\kcalmol{\kilo\cal\per\mol}
+\DeclareSIUnit\molal{\mol\per\kilo\gram}
+%%%%%%%%%%%%%%%%%%%%%%%% ALIAS SP-C        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\ufis}{\,$^{235}$U\,}
+\newcommand{\unofis}{\,$^{238}$U\,}
+\newcommand{\oyl}{\ce{O_{yl}}\,}
+\newcommand{\ofs}{\ce{O_{W1}}\,}
+\providecommand*{\eu}{\ensuremath{\mathrm{e}}}
+\providecommand*{\iu}{\ensuremath{\mathrm{i}}}
+\DeclareSIUnit[number-unit-product = {}]\molar{M}
+\definecolor{palette500}{rgb}{0.031, 0.286, 0.564 }
+\definecolor{palette501}{rgb}{0.044, 0.334, 0.624 }
+\definecolor{palette502}{rgb}{0.081, 0.381, 0.661 }
+\definecolor{palette503}{rgb}{0.118, 0.428, 0.698 }
+\definecolor{palette504}{rgb}{0.167, 0.481, 0.729 }
+\definecolor{palette505}{rgb}{0.216, 0.529, 0.754 }
+\definecolor{palette506}{rgb}{0.266, 0.577, 0.779 }
+\definecolor{palette507}{rgb}{0.326, 0.619, 0.803 }
+\definecolor{palette508}{rgb}{0.387, 0.660, 0.826 }
+\definecolor{palette509}{rgb}{0.460, 0.705, 0.848 }
+\definecolor{palette510}{rgb}{0.536, 0.746, 0.864 }
+\definecolor{palette511}{rgb}{0.611, 0.787, 0.880 }
+\definecolor{palette512}{rgb}{0.672, 0.814, 0.901 }
+
+%%%%%%%%%%%%%%%%%%%%%%%% MARCADORES CHAPTER 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{background}
+\usetikzlibrary{calc}
+\usepackage{ifthen}
+
+
+\usepackage{microtype}
+\pagestyle{plain}
+
+% background common settings
+\SetBgScale{1}
+\SetBgAngle{0}
+\SetBgOpacity{1}
+\SetBgContents{}
+
+% auxiliary counter
+\newcounter{chapshift}
+\addtocounter{chapshift}{-1}
+
+% the list of colors to be used (add more if needed)
+ \newcommand\BoxColor{%
+   \ifcase\thechapshift palette501\or palette502\or palette503\or palette504\or 
+palette505\or palette506\or palette507\or palette508\or palette509\or
+palette510\or palette511\or palette512\else palette500\fi
+}
+
+
+% the main command; the mandatory argument sets the color of the vertical box
+\makeatletter
+\newcommand\ChapFrame{%
+
+%%% Comment or uncoment to put page-guides
+
+\AddEverypageHook{%
+\ifthenelse{\isodd{\thepage}}
+{\SetBgContents{%
+\begin{tikzpicture}[overlay,remember picture]
+ \node[fill=\BoxColor,inner sep=0pt,rectangle,text width=4mm,
+   text height=2cm,align=center,anchor=north east]
+ at ($ (current page.north east) + (+0.2cm,3.0 cm -2*\thechapshift cm) $)
+ {\rotatebox{90}{\hspace*{.3cm}\parbox[c][1.5cm][t]{3.4cm}{%
+   }}};
+ \end{tikzpicture}}%
+}
+{\SetBgContents{%
+ \begin{tikzpicture}[overlay,remember picture]
+ \node[fill=\BoxColor,inner sep=0pt,rectangle,text width=4mm,
+   text height=2cm,align=center,anchor=north west]
+ at ($ (current page.north west) + (+3.2cm,3.0 cm -2*\thechapshift cm) $)
+ {\rotatebox{90}{\hspace*{.3cm}\parbox[c][1.5cm][t]{3.4cm}{%
+   }}};
+ \end{tikzpicture}}
+}
+\bg@material}%
+%%
+
+%%% COMMENTAR SOLO SI SE QUIERE QUE HAYA UN ÚNICO COLOR EN EL CHAPFRAME
+  \stepcounter{chapshift}
+
+
+
+}
+\makeatother
+
+%%%%%%%%  ESTILO DE PÁGINAS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makepagestyle{mypagestyle}
+\makeevenhead{mypagestyle}{\scshape \leftmark}{}{}  %\scshape MAYUSCULAS 
+\makeevenfoot{mypagestyle}{\thepage}{}{}            %(blanco) minusculas
+
+\makeoddhead{mypagestyle}{}{}{\rightmark}
+\makeoddfoot{mypagestyle}{}{}{\thepage}
+\makeatletter
+\makepsmarks{mypagestyle}{
+   \def \thefigure{\thechapter.\arabic{figure}}
+   \def \thesection{\thechapter.\arabic{section}}
+  \def\chaptermark##1{\markboth{%
+        \ifnum \value{secnumdepth} > -1
+          \if@mainmatter
+            \chaptername\ \thechapter. \hspace{0.1cm}\ %
+          \fi
+        \fi
+        ##1}{}}
+  \def\sectionmark##1{\markright{%
+        \ifnum \value{secnumdepth} > 0
+          \thesection. \hspace{0.1cm}\ %
+        \fi
+        ##1}}
+  \def\subsectionmark##1{\markright{%        %  
+        \ifnum \value{secnumdepth} > 1
+          \thesubsection. \hspace{0.1cm}\ %
+        \fi
+        ##1}}
+}
+
+\makeatother
+
+\makerunningwidth{mypagestyle}{1.0\textwidth}
+\makeheadposition{mypagestyle}{flushright}{flushleft}{center}{center}
+\makeheadrule{mypagestyle}{1.0\textwidth}{\normalrulethickness}
+
+%%%%%%%%  ESTILO DE INDICE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makepagestyle{index}
+
+\makeevenhead{index}{\rightmark}{}{} 
+\makeevenfoot{index}{\thepage}{}{} 
+
+\makeoddhead{index}{}{}{\leftmark} 
+\makeoddfoot{index}{}{}{\thepage}
+\makeatother
+
+\makerunningwidth{index}{1.0\textwidth}
+\makeheadposition{index}{flushright}{flushleft}{center}{center}
+\makeheadrule{index}{1.0\textwidth}{\normalrulethickness}
+
+
+%%%%%%%% Defeniciones para cambiar headings, chapter style, margins, %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\setcounter{secnumdepth}{3}      % Pone numero hasta las subsecciones
+\maxtocdepth{subsubsection}      % Incluye en el indice las subsubsecciones
+\linespread{1.08}                % Cambia la separación entre lineas
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}   % footnote con simbolo *
+
+
+%%%%%%%% Caption: fuente y tamaño %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[caption=false]{subfig}             % Paquete para las subfiguras
+
+\captionsetup[subfloat]{labelformat=empty}  % Elimina (a),(b),(c)y(d) del caption en las subfiguras
+\renewcommand\spanishtablename{Tabla} 
+\renewcommand\spanishlisttablename{Índice de tablas}
+\captionnamefont{\bfseries}                 % Tipo fuente en NOMBRE cation
+\captiontitlefont{\small\slshape}           % Tipo fuente en TEXTO cation 
+\captiondelim{\quad}                        % Elimina ``:`` y añade espacio en caption
+
+%%%%%%%%%%%%%% BIBLIOGRAFIA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\bibsep}{4pt}    %Cambia la separacion entre los bibitems
+\setlength{\parskip}{0pt}   
+
+\makeatletter
+ \def\@biblabel#1{#1.}   % Pone 1. en vez de [1] en bibliografia
+ \renewcommand{\bibsection}{\section{\bibname}\prebibhook}  
+\makeatother
+
+%%%%%%%%%%%%%   ESTILO DEL CAPITULO  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%Source for the BlueBox style
+ 
+\usepackage[scaled=.92]{helvet} %. Sans serif - Helvetica
+\usepackage{color,calc}
+\newsavebox{\ChpNumBox}
+\makeatletter
+\newcommand*{\thickhrulefill}{%
+\leavevmode\leaders\hrule height 1\p@ \hfill \kern \z@}
+\newcommand*\BuildChpNum[2]{%
+\begin{tabular}[t]{@{}c@{}}
+\makebox[0pt][c]{#1\strut} \\[.5ex]
+\colorbox{\BoxColor}{%
+\rule[-10em]{0pt}{0pt}%
+\rule{1ex}{0pt}\color{black}#2\strut
+\rule{1ex}{0pt}}%
+\end{tabular}}
+\makechapterstyle{BlueBox}{%
+\renewcommand{\chapnamefont}{\large\scshape}
+\renewcommand{\chapnumfont}{\Huge\bfseries}
+\renewcommand{\chaptitlefont}{\raggedright\Huge\bfseries}
+\setlength{\beforechapskip}{20pt}
+\setlength{\midchapskip}{26pt}
+\setlength{\afterchapskip}{40pt}
+\renewcommand{\printchaptername}{}
+\renewcommand{\chapternamenum}{}
+\renewcommand{\printchapternum}{%
+\sbox{\ChpNumBox}{%
+\BuildChpNum{\chapnamefont\@chapapp}%
+{\chapnumfont\thechapter}}}
+\renewcommand{\printchapternonum}{%
+\sbox{\ChpNumBox}{%
+\BuildChpNum{\chapnamefont\vphantom{\@chapapp}}%
+{\chapnumfont\hphantom{\thechapter}}}}
+\renewcommand{\afterchapternum}{}
+\renewcommand{\printchaptertitle}[1]{%
+\usebox{\ChpNumBox}\hfill
+\parbox[t]{\hsize-\wd\ChpNumBox-1em}{%
+\vspace{\midchapskip}%
+\thickhrulefill\par
+\chaptitlefont ##1\par}}%
+}
+
+\chapterstyle{BlueBox}
+
+
+%%%%%%%%%%%%%%%%%%%%%%   CHAPTER   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\prechapterprecisshift}{0.5\baselineskip}
+\renewcommand*{\precisfont}{\sffamily\small}
+
+%%%%%%%%%%%%%   TAMAÑO HOJA  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% UNCOMMENT FOR A4, COMMENT B5
+\trimLmarks
+\setstocksize{297mm}{210mm}          
+\settypeblocksize{190.0mm}{29.0pc}{*}
+%% UNCOMMENT FOR B5, COMMENT A4
+%\stockbv                              
+
+
+%% UNCOMMENT A4 COMMENT IF B5
+\makeatletter
+\setpagetl{\paperheight}{\paperwidth}{*}
+\makeatother
+
+
+\setlrmarginsandblock{85.35826pt}{67.41023pt}{*}
+\setulmarginsandblock{85.35826pt}{84.5604pt}{*}
+\setheaderspaces{*}{*}{0.45}
+\checkandfixthelayout
+
+
+\usepackage{transparent}
+\usepackage{eso-pic}       % Imagen como fondo en la página
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%% GLOSSARIES AND LINKS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%linktocpage
+\usepackage[pdfencoding=auto,psdextra,linktoc=all,hidelinks,allbordercolors={1 1 1}]{hyperref}
+\hypersetup{urlbordercolor=0 0 0,pdfborder=0 0 0 [3 2],bookmarksnumbered}
+\usepackage[acronym,toc,nomain]{glossaries}
+%nonumberlist para que no ponga número en la lista
+\usepackage{glossaries-extra} 
+
+\usepackage{bookmark}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeglossaries % create makeindex files
+\glssetcategoryattribute{acronym}{indexonlyfirst}{true}
+%%%%%%%%%%%%%%%%%%%%%%%%Glosaries Item%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Use \gls{md} in text. Do not use in captions.
+\include{chapters/glosswords} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}   % COMIENZO DE DOCUMENTO
+%Página EXTRA PRINCIPIO ONLY IF A4
+\pagestyle{empty}
+\ 
+\newpage
+\ 
+\newpage
+% ONLY IF B5
+%\includepdf[scale=1,pages=-]{./portadas/Tapa_Blanda_sin_sangrado.pdf}
+\frontmatter
+%%%%%%%%%%%%%% PAGINA DE TITULO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty}
+\AddToShipoutPicture*{
+%
+\put(+27,-100){%  cambiar este punto para controlar la posicion de la imagen
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill\centering
+\includegraphics[width=1.9\textwidth]{images/famaNegro}%
+\vfill
+}}
+%  cambiar el factor de transparencia para que salga más o menos claro
+\put(0,0){\transparent{0.85}\textcolor{white}{\rule{\paperwidth}{\paperheight}}}
+}
+\begin{center}
+\includegraphics[width=7cm]{./images/logotipo.jpeg}
+\rule{\textwidth}{1.2pt}
+DEPARTAMENTO DE QUÍMICA FÍSICA
+\par
+Programa de Doctorado de Química Teórica y Computacional
+
+\vspace{4cm}
+
+\begin{DoubleSpace}{\LARGE Computational Chemistry of Actinoids in Solution and Confined Media}
+\end{DoubleSpace}
+\end{center}
+
+\vspace{2cm}
+
+\begin{flushright}
+{\Large
+Sergio Pérez Conesa}\\
+{\large Sevilla, 2019}
+\end{flushright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\mbox{}
+\thispagestyle{empty} % para que no se enumere esta página
+
+\newpage
+\thispagestyle{empty}
+
+\begin{center}
+\includegraphics[width=7cm]{./images/logotipo.jpeg}
+\rule{\textwidth}{1.2pt}
+DEPARTAMENTO DE QUÍMICA FÍSICA
+\par
+Programa de Doctorado de Química Teórica y Computacional
+\vspace*{0.5cm}
+
+Memoria presentada para optar al Grado de Doctor\\
+ en Química por la Universidad de Sevilla.
+%\par %Descomentar si no se ponen firma
+\vspace*{0.3cm} %0.3 si firma digital
+%\vspace*{2.3cm} %2.3 de lo contrario
+\begin{center}
+\includegraphics[width=2.70cm]{./images/firma_SPC.png}
+\end{center}
+Sergio Pérez Conesa
+\rule{\textwidth}{1.2pt}
+\vspace*{0.4cm}%0.4 si firma digital. 2.4 de lo contrario
+%\vspace*{2.4cm}%2.4 de lo contrario
+V$^\circ$ B$^\circ$ Directores de la Tesis
+\par
+\vspace*{0.5cm}
+\includegraphics[width=2.70cm]{./images/firma_ESM.png}
+\hspace*{3.5cm}
+\includegraphics[width=2.0cm]{./images/firma_JMM.png}
+\newline
+Dr. Enrique Sánchez Marcos \hfill Dr. José Manuel Martínez Fernández
+\rule{\textwidth}{1.2pt}
+\end{center}
+
+\newpage
+\ 
+\newpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+\begin{minipage}[c]{0.7\textwidth}
+Me da vértigo el punto muerto\\
+y la marcha atrás,\\
+vivir en los atascos,\\
+los frenos automáticos y el olor a gasoil.\\
+Me angustia el cruce de miradas\\
+la doble dirección de las palabras\\
+y el obsceno guiñar de los semáforos.\\
+
+Me arruinan las prisas y las faltas de estilo,\\
+el paso obligatorio, las tardes de domingo\\
+y hasta la línea recta.\\
+Me enervan los que no tienen dudas\\
+y aquellos que se aferran\\
+a sus ideales sobre los de cualquiera.\\
+Me cansa tanto tráfico\\
+y tanto sinsentido,\\
+parado frente al mar mientras que el mundo gira.\\
+
+
+Francisco M. Ortega, (Fragmento en videoclip Standby de Extremoduro)\\
+\end{minipage}
+\end{center}
+\vspace*{\fill}
+
+
+
+\include{chapters/agradecimientos}          % Capítulo 1
+
+\selectlanguage{english}
+
+\pagestyle{index}
+\cleartorecto
+\tableofcontents % Indice general. Incluye automáticamente chapter, section, subsection...
+\cleartorecto
+\listoftables    % Indice de tablas. Incluye automáticamente tablas.
+\cleartorecto
+\listoffigures   % Indice de figuras. Incluye automáticamente figuras.
+\newpage
+%\glsaddall[types={acronym}] Si quieres que los acrónimos se definan antes del texto
+%%%%%%%%%%%% UNCOMMENT
+%\printacronyms % input files created by makeindex
+
+%%%%%%%%%%%%%%%%%%%%
+\setcounter{secnumdepth}{0}      % Profundidad hasta la que se numeran secciones,subsecciones,
+                                 % si se pone a 0 no numera.
+\include{chapters/abstract}     % Abstract
+
+\mainmatter
+\setcounter{secnumdepth}{3}      % Pone numero hasta las subsecciones
+\maxtocdepth{subsubsection}      % Incluye en el indice las subsubsecciones
+
+\pagestyle{mypagestyle}
+\ChapFrame
+\include{chapters/c1-intro}          % Capítulo 1
+\ChapFrame
+\include{chapters/c2-goals}          % Capítulo 1
+\ChapFrame
+\include{chapters/c3-methods}          % Capítulo 2
+\ChapFrame
+\chapter[]{A hydrated ion model of \ce{[UO2]^{2+}} in water: Structure, dynamics, and 
+spectroscopy from classical molecular dynamics}\label{art1}
+\section{
+%Pérez-Conesa, S.; Torrico, F.; Martínez, J. M.; Pappalardo, R. R.; Sánchez
+%Marcos, E. 
+\textit{J. Chem. Phys.} \textbf{2016},\textit{ 145, 224502--224523}
+}
+\
+\newpage
+\ 
+\newpage
+\includepdf[scale=1,pages=-]{./articles/JCP_2016.pdf}
+%\section*{Supplementary Material}
+\addcontentsline{toc}{subsection}{Supplementary Material}
+\newpage
+\ 
+\newpage
+\includepdf[scale=1,pages=-]{./articles/SI_JCP_2016.pdf}
+\ChapFrame
+\chapter[]{A general study of actinyl hydration by molecular dynamics simulations using ab 
+initio force fields}\label{art2}
+\section{
+%Pérez-Conesa, S.; Torrico, F.; Martínez, J. M.; Pappalardo, R. R.; Mar-
+%cos, E. S. 
+\textit{J. Chem. Phys.} \textbf{2019}, \textit{150, 104504--104514}
+}
+\newpage
+\ 
+\newpage
+\includepdf[scale=1,pages=-]{./articles/JCP_2019.pdf}
+\addcontentsline{toc}{subsection}{Supporting Information}
+\includepdf[scale=1,pages=-]{./articles/SI_JCP_2019.pdf}
+\ChapFrame
+\chapter[]{Extracting the Americyl Hydration from an Americium Cationic Mixture in Solution: A 
+Combined X-ray Absorption Spectroscopy and Molecular Dynamics Study}\label{art3}
+\section{
+%Pérez-Conesa, S.; Martínez, J. M.; Pappalardo, R. R.; Sánchez Marcos, E.
+\textit{Inorg. Chem.} \textbf{2018}, \textit{57, 8089--8097}
+}
+\newpage
+\ 
+\newpage
+\includepdf[scale=1,pages=-]{./articles/IC_2018.pdf}
+\newpage
+\ 
+\newpage
+\addcontentsline{toc}{subsection}{Supplementary Material}
+\includepdf[scale=1,pages=-]{./articles/SI_IC_2018.pdf}
+\ChapFrame
+\chapter[]{Combining EXAFS and Computer Simulations to
+Refine the Structural Description of Actinyl in Water
+}\label{art3.5}
+\section{
+Pending on publication 
+}
+\newpage
+\ 
+\newpage
+\includepdf[scale=1,pages=-]{./articles/actinyl_XAS.pdf}
+\addcontentsline{toc}{subsection}{Supplementary Material}\newpage
+\ 
+\newpage
+\includepdf[scale=1,pages=-]{./articles/SI_actinyl_XAS.pdf}
+\ChapFrame
+\chapter[Hydration and Diffusion Mechanism of Uranyl in Montmorillonite Clay: MD Using an Ab 
+Initio Potential]{Hydration and Diffusion Mechanism of Uranyl in 
+Montmorillonite Clay: Molecular 
+Dynamics Using an Ab Initio Potential}\label{art4}
+\section{
+%Pérez-Conesa, S.; Martinez, J. M.; Sanchez Marcos, E. 
+\textit{J. Phys. Chem. C} \textbf{2017}, \textit{121, 27437--27444}
+}
+\newpage
+\ 
+\newpage
+\includepdf[scale=1,pages=-]{./articles/JPCC_2017.pdf}
+\addcontentsline{toc}{subsection}{Supporting Information}
+\includepdf[scale=1,pages=-]{./articles/SI_JPCC_2017.pdf}
+\include{chapters/section-erratum}
+\ChapFrame
+\chapter[]{A local fingerprint for hydrophobicity and hydrophilicity: from methane to 
+peptides}\label{art5}
+\section{
+%Pérez-Conesa, S.; Piaggi, P. M.; Parrinello, M. 
+\textit{J. Chem. Phys.} \textbf{2019}, \textit{150,204103--204108}
+}\label{art5_sec1}
+\newpage
+\ 
+\newpage
+\includepdf[scale=1,pages=-]{./articles/JCP_19_Parrinello.pdf}
+\addcontentsline{toc}{subsection}{Supporting Information}
+\includepdf[scale=1,pages=-]{./articles/SI_JCP_19_Parrinello.pdf}
+
+\include{chapters/section-uranyl-fingerprint}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% apéndices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\ChapFrame
+\include{chapters/c4-results-discussion}     % Capítulo 4
+\ChapFrame
+\include{chapters/c5-conclusion}     % Capítulo 5
+%%Página EXTRA FINAL
+% only if A4
+\pagestyle{empty}
+\newpage
+\pagestyle{empty}
+\ 
+\newpage
+\ 
+\newpage
+\end{document}   % FIN DE DOCUMENTO
+

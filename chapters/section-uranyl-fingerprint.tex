@@ -1,0 +1,78 @@
+\section[Hydrophobicity fingerprint of actinyls]{Hydrophobicity hydrophilicity 
+fingerprint of actinyls.}
+
+\begin{table}
+\center
+\caption[Fingerprint values for actinyls]{Hydrophobicity/hydrophilicity fingerprint values of 
+actinyl atoms obtained from the 
+simulations of Chapter \ref{art2}.}\label{tableAn}
+\begin{tabular}{lccc}
+\toprule
+&$h$&$h^\text{HI}$&$h^{\text{HI}}_{\text{0-\SI{90}{\degree}}}$\\
+\midrule
+An       &-7.9   &  -5.2 & -  \\
+\oyl  & -1.9 &   0.4 & -2.1 \\
+\ofs  &0.8&   1.5  &0.5\\
+\ce{H2O}    & 1.0&  1.0 & - \\
+\ce{CH4}    &-1.0& -1.0 & -  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Given the amphiphilic nature of the solvation of actinyls, the simulations carried out in 
+Chapters \ref{art1} and \ref{art2} are perfect candidates to study the fingerprint behavior in 
+complex cationic systems. We present the fingerprints of the heavy atoms of uranyl as  
+representative of the rest of actinyls since due to their similarity in solvation the fingerprint 
+values must be very similar even for \ce{[NpO2]^+}. The 
+reference values of $S_s$ were calculated from a pure TIP4P-water simulation and a methane 
+TIP4P-water simulation. Three versions of the fingerprint were examined:
+\begin{itemize}
+ \item $h$: uses the RDF between the atom of interest 
+and all water molecules.
+\item $h^\text{HI}$: uses the RDF between the fingerprinted atom and all bulk water molecules 
+excluding 
+the first-shell.
+  \item $h^\text{HI}_\text{0-\SI{90}{\degree}}$: uses the 0-\SI{90}{\degree} angle-solved RDF 
+between 
+the fingerprinted atom and all bulk water molecules. The 0-\SI{90}{\degree} cone is calculated 
+in the same fashion as in the angle-resolved RDFs of the \oyl atom in Chapter \ref{art1}.
+\end{itemize}
+
+The last two definitions connect with the HIM philosophy by considering first-shell water 
+molecules part of the solute and not of the solvent. The fingerprint values are 
+collected in Table 
+\ref{tableAn}.
+
+The first shell water molecules (\ofs) are correctly labeled as hydrophilic by the fingerprint in 
+all 
+versions. In contrast, the \oyl atoms are labeled as hydrophilic by $h^\text{HI}$ and 
+hydrophobic by $h$. $h^\text{HI}$ is conceptually a better fingerprint since first-shell water 
+molecules do not solvate the \oyl atom. Unfortunately, it also misclassifies the \oyl 
+atom as hydrophilic.
+
+As we have seen in Chapter \ref{art1}, the solvation of the uranyl atoms is 
+very 
+anisotropic and standard RDF  can lead to wrong conclusions 
+i. e. the \oyl RDF 
+includes solvent 
+molecules that are in the bridge solvation region and are not solvating the \oyl atom. For 
+this reason we decided to use as the fingerprint 
+input the 0-\SI{90}{\degree} angle-solved RDF. In this way, the solvent molecules included in the 
+RDF are the ones that solvate the atom. $h^\text{HI}_\text{0-\SI{90}{\degree}}$ classifies 
+correctly 
+the \oyl and \ofs atoms but it considers \ofs to be less hydrophilic than 
+bulk water molecules.
+
+The fingerprint classifies the actinoid cation as hydrophobic which is clear\-ly an artifact. 
+In 
+Section \ref{art5_sec1} this effect was also described for \ce{Na^+}. The order imposed on the 
+solvent structure by the 
+doubly charged cation is very high and thus obtaining $h$ values much lower than methane. 
+
+In conclusion, the fingerprint appears to be unfit to classify the central atoms of cations 
+with charge higher or equal to one. For the rest of the heavy atoms of the hydrated ion mixed 
+results are obtained.
+
+The fingerprint is too coarse for complex solutes like actinyls. A future improved 
+fingerprint could probably make use of orientational pair entropy in addition to some technique to 
+consider the anisotropicity of the solute in complex environments. 

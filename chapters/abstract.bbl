@@ -1,0 +1,166 @@
+\providecommand{\latin}[1]{#1}
+\providecommand*\mcitethebibliography{\thebibliography}
+\csname @ifundefined\endcsname{endmcitethebibliography}
+  {\let\endmcitethebibliography\endthebibliography}{}
+\begin{mcitethebibliography}{18}
+\providecommand*\natexlab[1]{#1}
+\providecommand*\mciteSetBstSublistMode[1]{}
+\providecommand*\mciteSetBstMaxWidthForm[2]{}
+\providecommand*\mciteBstWouldAddEndPuncttrue
+  {\def\EndOfBibitem{\unskip.}}
+\providecommand*\mciteBstWouldAddEndPunctfalse
+  {\let\EndOfBibitem\relax}
+\providecommand*\mciteSetBstMidEndSepPunct[3]{}
+\providecommand*\mciteSetBstSublistLabelBeginEnd[3]{}
+\providecommand*\EndOfBibitem{}
+\mciteSetBstSublistMode{f}
+\mciteSetBstMaxWidthForm{subitem}{(\alph{mcitesubitemcount})}
+\mciteSetBstSublistLabelBeginEnd
+  {\mcitemaxwidthsubitemform\space}
+  {\relax}
+  {\relax}
+
+\bibitem[{World Bank}(2015)]{NuclearElectricEnergy}
+{World Bank}, Nuclear Energy Statistics World Bank. 2015;
+  \url{https://data.worldbank.org/indicator/eg.elc.nucl.zs}\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Lozano~Leyva(2010)]{NuclearesLozano}
+Lozano~Leyva,~M. \emph{Nucleares, ¿Por qu{\'e} no?}; DEBOLS!LLO: Barcelona,
+  2010\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Herbst \latin{et~al.}(2011)Herbst, Baron, and Nilsson]{HERBST2011141}
+Herbst,~R.~S.; Baron,~P.; Nilsson,~M. In \emph{Adv. Sep. Tech. Nucl. Fuel
+  Reprocess. Radioact. Waste Treat.}; Nash,~K.~L., Lumetta,~G.~J., Eds.;
+  Woodhead Publishing Series in Energy; Woodhead Publishing: Cambridge, 2011;
+  Chapter 6\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[L. \latin{et~al.}(2007)L., Madic, Jagdish, and
+  Lacquement]{Katz2007-ch24}
+L.,~K.; Madic,~C.; Jagdish,~M.~N.; Lacquement,~J. In \emph{{The Chemistry of
+  Actinide and Transactinide Elements}}; Katz,~J.~J., Seaborg,~G.~T., Eds.;
+  Springer Science {\&} Business Media: Dordrecht, The Netherlands., 2007;
+  Chapter 24\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Delage \latin{et~al.}(2010)Delage, Cui, and Tang]{Delage2010}
+Delage,~P.; Cui,~Y.; Tang,~A. \emph{J. Rock Mech. Geotech. Eng.} \textbf{2010},
+  \emph{2}, 111--123\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Pappalardo and {S{\'{a}}nchez Marcos}(1993)Pappalardo, and
+  {S{\'{a}}nchez Marcos}]{JPhysChem_ESM_1993}
+Pappalardo,~R.~R.; {S{\'{a}}nchez Marcos},~E. \emph{J. Phys. Chem.}
+  \textbf{1993}, \emph{97}, 4500--4504\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Mart{\'{i}}nez \latin{et~al.}(1998)Mart{\'{i}}nez, Pappalardo, and
+  {S{\'{a}}nchez Marcos}]{JChemPhys_ESM_1998}
+Mart{\'{i}}nez,~J.~M.; Pappalardo,~R.~R.; {S{\'{a}}nchez Marcos},~E. \emph{J.
+  Chem. Phys.} \textbf{1998}, \emph{109}, 1445--1455\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Mart{\'{i}}nez \latin{et~al.}(1999)Mart{\'{i}}nez, Pappalardo, and
+  {S{\'{a}}nchez Marcos}]{JACS_ESM_1999}
+Mart{\'{i}}nez,~J.~M.; Pappalardo,~R.~R.; {S{\'{a}}nchez Marcos},~E. \emph{J.
+  Am. Chem. Soc.} \textbf{1999}, \emph{121}, 3175--3184\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Angeli \latin{et~al.}(2001)Angeli, Cimiraglia, Evangelisti, Leininger,
+  and Malrieu]{NEVPT2_1}
+Angeli,~C.; Cimiraglia,~R.; Evangelisti,~S.; Leininger,~T.; Malrieu,~J.-P.
+  \emph{J. Chem. Phys.} \textbf{2001}, \emph{114}, 10252--10264\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Angeli \latin{et~al.}(2001)Angeli, Cimiraglia, and Malrieu]{NEVPT2_2}
+Angeli,~C.; Cimiraglia,~R.; Malrieu,~J.-P. \emph{Chem. Phys. Lett.}
+  \textbf{2001}, \emph{350}, 297--305\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Angeli \latin{et~al.}(2002)Angeli, Cimiraglia, and Malrieu]{NEVPT2_3}
+Angeli,~C.; Cimiraglia,~R.; Malrieu,~J.-P. \emph{J. Chem. Phys.} \textbf{2002},
+  \emph{117}, 9138--9153\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[P{\'{e}}rez-Conesa \latin{et~al.}(2018)P{\'{e}}rez-Conesa,
+  Mart{\'{i}}nez, Pappalardo, and {S{\'{a}}nchez Marcos}]{Perez-Conesa2018}
+P{\'{e}}rez-Conesa,~S.; Mart{\'{i}}nez,~J.~M.; Pappalardo,~R.~R.;
+  {S{\'{a}}nchez Marcos},~E. \emph{Inorg. Chem.} \textbf{2018}, \emph{57},
+  8089--8097\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Riddle \latin{et~al.}(2016)Riddle, Czerwinski, Kim, Paviet, Weck,
+  Poineau, and Conradson]{JRadioanNucChem_Riddle_2016}
+Riddle,~C.; Czerwinski,~K.; Kim,~E.; Paviet,~P.; Weck,~P.; Poineau,~F.;
+  Conradson,~S. \emph{J. Radioanal. Nucl.} \textbf{2016}, \emph{309},
+  1087--1095\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[P{\'{e}}rez-Conesa \latin{et~al.}(2017)P{\'{e}}rez-Conesa,
+  Mart{\'{i}}nez, and {S{\'{a}}nchez Marcos}]{JPC_SPC_2017}
+P{\'{e}}rez-Conesa,~S.; Mart{\'{i}}nez,~J.~M.; {S{\'{a}}nchez Marcos},~E.
+  \emph{J. Phys. Chem. C} \textbf{2017}, \emph{121}, 27437--27444\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Catalano and {Brown Jr}(2005)Catalano, and {Brown
+  Jr}]{GeoCosmoAct_Catalano_2005}
+Catalano,~J.~G.; {Brown Jr},~G.~E. \emph{Geochim. Cosmochim. Acta}
+  \textbf{2005}, \emph{69}, 2995--3005\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Denecke \latin{et~al.}(1999)Denecke, Bauer, Kim, and
+  Moll]{MinWatIntClEq_Denecke_1999}
+Denecke,~M.~A.; Bauer,~A.; Kim,~J.~I.; Moll,~H. \emph{Miner. Interact. Close to
+  Equilib.} \textbf{1999}, 35--37\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Nettleton and Green(1958)Nettleton, and
+  Green]{nettleton1958expression}
+Nettleton,~R.~E.; Green,~M.~S. \emph{J. Chem. Phys.} \textbf{1958}, \emph{29},
+  1365--1370\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\bibitem[Baranyai and Evans(1989)Baranyai, and Evans]{baranyai1989direct}
+Baranyai,~A.; Evans,~D.~J. \emph{Phys. Rev. A} \textbf{1989}, \emph{40},
+  3817--3822\relax
+\mciteBstWouldAddEndPuncttrue
+\mciteSetBstMidEndSepPunct{\mcitedefaultmidpunct}
+{\mcitedefaultendpunct}{\mcitedefaultseppunct}\relax
+\EndOfBibitem
+\end{mcitethebibliography}
